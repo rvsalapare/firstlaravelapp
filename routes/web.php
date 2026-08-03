@@ -16,6 +16,10 @@ Route::get('/contact', function () {
 });
 */
 
-Route::view('/', 'welcome');
+Route::view('/', 'welcome', [
+    'greetings' => 'Good Evening', 
+    /*'person' => 'Mina'*/
+    'person' => request('person', 'Mina')
+    ]);
 Route::view('/about', 'about');
 Route::view('/contact', 'contact');

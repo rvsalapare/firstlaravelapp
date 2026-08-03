@@ -1,9 +1,13 @@
+@props([
+    'title' => 'Default Title'
+])
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mean - Taylor Swift</title>
+    <title>{{ $title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -67,6 +71,11 @@
             transition: all 0.2s ease;
         }
 
+        nav a.active {
+            color: var(--primary);
+            background-color: var(--primary-light);
+        }
+
         nav a:hover {
             color: var(--primary);
             background-color: var(--primary-light);
@@ -100,12 +109,8 @@
             color: var(--text-main);
         }
 
-        footer {
-            margin-top: auto;
-            padding: 1.5rem;
-            text-align: center;
-            font-size: 0.875rem;
-            color: var(--text-muted);
+        .card {
+            color: red;
         }
     </style>
 </head>
@@ -113,15 +118,21 @@
 
     <header>
         <nav>
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
+            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+            <x-nav-link href="/about" :active="request()->is('about')">About Us</x-nav-link>
+            <x-nav-link href="/contact" :active="request()->is('contact')">Contact Us</x-nav-link>
         </nav>
     </header>
 
     <main>
         {{ $slot }}
     </main>
+
+    @if (isset($footer))
+    <footer style="margin-top: auto; padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.875rem;">
+        {{ $footer }}
+    </footer>
+    @endif
 
 </body>
 </html>
