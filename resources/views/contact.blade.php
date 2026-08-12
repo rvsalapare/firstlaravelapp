@@ -1,15 +1,10 @@
 <x-layout title="Contact Us">
-    <h1>Contact Us</h1>
+    <h1 class="page-title">Contact Us</h1>
 
-    <p>
-        09123456789
-    </p>
-
-    <x-card class="card">
-        <p>
-            IG: taylorswift
-        </p>
-    </x-card>
+    <div class="card">
+        <p>09123456789</p>
+        <p>IG: taylorswift</p>
+    </div>
 
     <x-slot:footer>
         © {{ date('Y') }} Swiftie

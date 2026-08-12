@@ -71,11 +71,7 @@
             transition: all 0.2s ease;
         }
 
-        nav a.active {
-            color: var(--primary);
-            background-color: var(--primary-light);
-        }
-
+        nav a.active,
         nav a:hover {
             color: var(--primary);
             background-color: var(--primary-light);
@@ -88,7 +84,7 @@
             flex: 1;
         }
 
-        main h1 {
+        .page-title {
             text-align: center;
             color: var(--primary);
             font-size: 2.25rem;
@@ -97,20 +93,29 @@
             letter-spacing: -0.02em;
         }
 
-        main p {
+        .card {
             background-color: var(--card-bg);
             padding: 2.5rem 2rem;
             border-radius: var(--radius);
             box-shadow: var(--shadow);
             border: 1px solid rgba(123, 63, 191, 0.08);
-            white-space: pre-line;
-            text-align: center;
-            font-size: 1.05rem;
             color: var(--text-main);
+            font-size: 1.05rem;
         }
 
-        .card {
-            color: red;
+        .card p {
+            white-space: pre-line;
+            text-align: left;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
         }
     </style>
 </head>
@@ -129,9 +134,9 @@
     </main>
 
     @if (isset($footer))
-    <footer style="margin-top: auto; padding: 2rem; text-align: center; color: var(--text-muted); font-size: 0.875rem;">
-        {{ $footer }}
-    </footer>
+        <footer>
+            {{ $footer }}
+        </footer>
     @endif
 
 </body>

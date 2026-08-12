@@ -1,11 +1,12 @@
 <x-layout title="Mean - Taylor Swift">
-    <h1>Mean - Taylor Swift</h1>
+    <h1 class="page-title">Mean - Taylor Swift</h1>
     
-    <p style="font-weight: 600; margin-bottom: 1rem;">
-        {{ $greetings ?? 'Good Evening' }}, {{ $person ?? 'Mina' }}!
-    </p>
+    <div class="card">
+        <p style="font-weight: 600; margin-bottom: 1rem;">
+            {{ $greetings ?? 'Good Evening' }}, {{ $person ?? 'Mina' }}!
+        </p>
 
-    <p>
+        <p>
         You, with your words like knives and swords
         And weapons that you use against me
         You have knocked me off my feet again
@@ -57,7 +58,8 @@
         Someday, I'll be big enough, so you can't hit me (why you gotta be so mean?)
         And all you're ever gonna be is mean
         Why you gotta be so mean?
-    </p>
+        </p>
+    </div>
 
     <x-slot:footer>
         © {{ date('Y') }} Swiftie
