@@ -1,67 +1,24 @@
-<x-layout title="Mean - Taylor Swift">
-    <h1 class="page-title">Mean - Taylor Swift</h1>
-    
-    <div class="card">
-        <p style="font-weight: 600; margin-bottom: 1rem;">
-            {{ $greetings ?? 'Good Evening' }}, {{ $person ?? 'Mina' }}!
-        </p>
-
-        <p>
-        You, with your words like knives and swords
-        And weapons that you use against me
-        You have knocked me off my feet again
-        Got me feeling like a nothing
-        You, with your voice like nails on a chalkboard
-        Calling me out when I'm wounded
-        You, picking on the weaker man
-        Well, you can take me down
-        With just one single blow
-        But you don't know what you don't know
-        Someday, I'll be living in a big old city
-        And all you're ever gonna be is mean
-        Someday, I'll be big enough, so you can't hit me
-        And all you're ever gonna be is mean
-        Why you gotta be so mean?
-        You, with your switching sides
-        And your wildfire lies and your humiliation
-        You have pointed out my flaws again
-        As if I don't already see them
-        I walk with my head down, trying to block you out
-        'Cause I'll never impress you
-        I just wanna feel okay again
-        I'll bet you got pushed around
-        Somebody made you cold
-        But the cycle ends right now
-        'Cause you can't lead me down that road
-        And you don't know what you don't know
-        Someday, I'll be living in a big old city
-        And all you're ever gonna be is mean
-        Someday, I'll be big enough, so you can't hit me
-        And all you're ever gonna be is mean
-        Why you gotta be so mean?
-        And I can see you years from now in a bar
-        Talking over a football game
-        With that same big loud opinion, but nobody's listening
-        Washed up and ranting about the same old bitter things
-        Drunk and grumbling on about how I can't sing
-        All you are is mean
-        All you are is mean
-        And a liar, and pathetic, and alone in life
-        And mean, and mean, and mean, and mean
-        But someday, I'll be living in a big old city
-        And all you're ever gonna be is mean, yeah
-        Someday, I'll be big enough, so you can't hit me
-        And all you're ever gonna be is mean
-        Why you gotta be so mean?
-        And all you're ever gonna be is mean
-        (Why you gotta be so mean?)
-        Someday, I'll be big enough, so you can't hit me (why you gotta be so mean?)
-        And all you're ever gonna be is mean
-        Why you gotta be so mean?
-        </p>
+<x-layout title="Home - Songs">
+    <div class="page-header">
+        <h1 class="page-title">Song Lyrics</h1>
+        <a href="{{ route('songs.create') }}" class="btn btn-primary">+ Add Song</a>
     </div>
 
+    @forelse($songs as $song)
+        @if($loop->first)
+        <div class="songs-grid">
+        @endif
+            <x-song-card :song="$song" />
+        @if($loop->last)
+        </div>
+        @endif
+    @empty
+        <div class="card">
+            <p style="text-align: center; color: #666;">No songs yet. <a href="{{ route('songs.create') }}">Add one now!</a></p>
+        </div>
+    @endforelse
+
     <x-slot:footer>
-        © {{ date('Y') }} Swiftie
+        © {{ date('Y') }} Lyrics App
     </x-slot:footer>
 </x-layout>

@@ -3,11 +3,11 @@
 
     <div class="card">
         <p>
-            Taylor Alison Swift (born December 13, 1989) is an American singer-songwriter. An influential figure in popular culture, she is known for her autobiographical songwriting and artistic reinventions. Swift is the highest-grossing live music artist, the wealthiest female musician, and one of the best-selling music artists of all time.
+            Lyrics App is intended for a web user to create lyrics and browse it for later use.
         </p>
     </div>
 
     <x-slot:footer>
-        © {{ date('Y') }} Swiftie
+        © {{ date('Y') }} Lyrics App
     </x-slot:footer>
 </x-layout>
