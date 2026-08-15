@@ -11,14 +11,14 @@
                     name="title"
                     label="Song Title"
                     placeholder="e.g., Blank Space"
-                    value="{{ $song->title }}"
+                    :value="$song->title"
                 />
 
                 <x-form-input
                     name="artist"
                     label="Artist"
                     placeholder="e.g., Taylor Swift"
-                    value="{{ $song->artist }}"
+                    :value="$song->artist"
                 />
 
                 <x-form-textarea
@@ -26,7 +26,7 @@
                     label="Lyrics"
                     placeholder="Enter the song lyrics..."
                     rows="8"
-                    value="{{ $song->lyrics }}"
+                    :value="$song->lyrics"
                 />
 
                 <div>
