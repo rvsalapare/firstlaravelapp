@@ -1,16 +1,15 @@
 @props(['song'])
 
-<div id="lyrics-modal-{{ $song->id }}" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <div>
-                <h2>{{ $song->title }}</h2>
-                <p style="margin: 0.25rem 0 0 0; color: var(--text-muted); font-size: 0.9rem;">by {{ $song->artist }}</p>
-            </div>
-            <button class="modal-close" onclick="closeLyricsModal({{ $song->id }})" aria-label="Close lyrics">&times;</button>
-        </div>
-        <div class="modal-body">
-            <p class="modal-lyrics">{{ $song->lyrics }}</p>
-        </div>
+<dialog id="lyrics-modal-{{ $song->id }}" class="modal">
+    <div class="modal-box max-w-2xl">
+        <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" aria-label="Close lyrics">✕</button>
+        </form>
+        <h3 class="text-xl font-bold text-primary">{{ $song->title }}</h3>
+        <p class="text-sm text-base-content/60 mt-1">by {{ $song->artist }}</p>
+        <p class="whitespace-pre-line leading-relaxed mt-4">{{ $song->lyrics }}</p>
     </div>
-</div>
+    <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+    </form>
+</dialog>

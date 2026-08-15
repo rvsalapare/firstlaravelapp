@@ -1,8 +1,10 @@
 <x-layout title="Contact Us">
-    <h1 class="page-title">Contact Us</h1>
+    <h1 class="text-3xl font-bold text-primary mb-8">Contact Us</h1>
 
-    <div class="card">
-        <p>IG: LyricsApp</p>
+    <div class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+            <p>IG: LyricsApp</p>
+        </div>
     </div>
 
     <x-slot:footer>

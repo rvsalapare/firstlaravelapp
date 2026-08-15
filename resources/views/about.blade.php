@@ -1,10 +1,12 @@
 <x-layout title="About us">
-    <h1 class="page-title">About us</h1>
+    <h1 class="text-3xl font-bold text-primary mb-8">About us</h1>
 
-    <div class="card">
-        <p>
-            Lyrics App is intended for a web user to create lyrics and browse it for later use.
-        </p>
+    <div class="card bg-base-100 shadow-sm">
+        <div class="card-body">
+            <p>
+                Lyrics App is intended for a web user to create lyrics and browse it for later use.
+            </p>
+        </div>
     </div>
 
     <x-slot:footer>
