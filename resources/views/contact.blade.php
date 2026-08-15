@@ -1,11 +1,9 @@
 <x-layout title="Contact Us">
     <h1 class="text-3xl font-bold text-primary mb-8">Contact Us</h1>
 
-    <div class="card bg-base-100 shadow-sm">
-        <div class="card-body">
-            <p>IG: LyricsApp</p>
-        </div>
-    </div>
+    <x-card>
+        <p>IG: LyricsApp</p>
+    </x-card>
 
     <x-slot:footer>
         © {{ date('Y') }} Lyrics App

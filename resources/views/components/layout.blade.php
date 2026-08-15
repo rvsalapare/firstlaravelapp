@@ -9,6 +9,15 @@
     <title>{{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @fonts
+
+    <style>
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px -5px rgba(123, 63, 191, 0.08);
+            padding: 2rem;
+        }
+    </style>
 </head>
 <body class="min-h-screen flex flex-col bg-base-200">
     <div class="navbar bg-base-100 shadow-sm sticky top-0 z-10">
